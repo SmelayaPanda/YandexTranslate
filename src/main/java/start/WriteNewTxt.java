@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class WriteNewTxt {
     public static void writeWithTranslate(String eng, String ru, Integer order) {
-        String fileName = "C:\\Users\\SmelayaPanda\\IdeaProjects\\YandexTranslate\\src\\main\\resources\\attempt2";
+        String fileName = "C:\\Users\\SmelayaPanda\\IdeaProjects\\YandexTranslate\\src\\main\\resources\\part1";
         Writer writer = null;
         try {
             writer = new FileWriter(fileName, true);
