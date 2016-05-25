@@ -21,7 +21,7 @@ public class StartYandexTranslate {
             e.printStackTrace();
         }
 
-        String fileName = "C:\\Users\\SmelayaPanda\\IdeaProjects\\YandexTranslate\\src\\main\\resources\\countRating2.txt";
+        String fileName = "C:\\Users\\SmelayaPanda\\IdeaProjects\\YandexTranslate\\src\\main\\resources\\countRating3.txt";
         try {
             TxtFileReader.readFile(fileName, list);
         } catch (IOException e) {
