@@ -8,13 +8,12 @@ import java.util.logging.Logger;
 
 public class WriteNewTxt {
     public static void writeWithTranslate(String eng, String ru, Integer order) {
-        String fileName = "C:\\Users\\SmelayaPanda\\IdeaProjects\\YandexTranslate\\src\\main\\resources\\part3.txt";
+        String fileName = "C:\\Users\\SmelayaPanda\\IdeaProjects\\YandexTranslate\\src\\main\\resources\\composite-words.txt";
         Writer writer = null;
         try {
             writer = new FileWriter(fileName, true);
-            writer.write(eng+" ");
-            writer.write(ru+ " ");
-            writer.write(order.toString());
+            writer.write(eng);
+            writer.write("=" + ru);
             writer.write(System.getProperty("line.separator"));
             writer.flush();
 

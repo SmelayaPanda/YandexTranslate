@@ -55,6 +55,6 @@ public class WordUnit implements Comparable<WordUnit> {
 
     @Override
     public String toString() {
-        return eng + " " + ru + " " + ordinar;
+        return eng + "=" + ru;
     }
 }

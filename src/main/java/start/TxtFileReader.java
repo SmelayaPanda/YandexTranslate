@@ -12,15 +12,18 @@ public class TxtFileReader {
             int s;
             int i = 1;
             while (((s = in.read()) != -1)) {
-                if (Character.isLetter(s)) {
+                if (Character.isLetter(s) || (char) s == '-' || (char) s == '`') {
                     sb.append((char) s);
                 } else {
                     String engl = String.valueOf(sb).toLowerCase();
-                    if (!engl.equals("")) {
-                        WordUnit wordUnit = new WordUnit(engl,i);
+                    char[] chars = engl.toCharArray();
+                    if ((chars.length >= 3 && (chars[(chars.length-1)] != '-') && engl.contains("-") && ((chars[0] != '-' && chars[0] != '`') && engl.matches(".*[A-Za-z].") && !engl.equals("") && ((engl.contains("-")) || engl.contains("'"))))) {
+                        WordUnit wordUnit = new WordUnit(engl, i);
                         list.add(wordUnit);
                         sb.delete(0, sb.length());
                         i++;
+                    } else {
+                        sb.delete(0, sb.length());
                     }
                 }
             }

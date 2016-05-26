@@ -21,13 +21,13 @@ public class StartYandexTranslate {
             e.printStackTrace();
         }
 
-        String fileName = "C:\\Users\\SmelayaPanda\\IdeaProjects\\YandexTranslate\\src\\main\\resources\\countRating3.txt";
+        String fileName = "C:\\Users\\SmelayaPanda\\IdeaProjects\\YandexTranslate\\src\\main\\resources\\countRating1full.txt";
         try {
             TxtFileReader.readFile(fileName, list);
         } catch (IOException e) {
             System.out.println("Hz что произошло");
         }
-        int i = 104490;
+        int i = 0;
         for (WordUnit l : list) {
             try {
                 String eng = l.getEng();
