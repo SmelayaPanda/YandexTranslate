@@ -1,6 +1,5 @@
-ich 
-ist 
-ich 
+ich
+ist
 nicht 
 sie 
 du 

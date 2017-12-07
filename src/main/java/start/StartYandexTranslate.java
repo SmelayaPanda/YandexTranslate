@@ -16,14 +16,14 @@ public class StartYandexTranslate {
     public static void main(String[] args) throws IOException {
 
         Translate.setKey(ApiKeys.YANDEX_API_KEY);
-        TreeMap map = FileReader.readFileToMap("./src/main/resources/forAvac/deuWordsWikiArranged.txt");
-        PrintWriter pw = new PrintWriter(new FileWriter("./src/main/resources/forAvac/translatedDeuWikiToRus.txt"));
+        TreeMap map = FileReader.readFileToMap("./src/main/resources/forAvac/spaWordsWikiArranged.txt");
+        PrintWriter pw = new PrintWriter(new FileWriter("./src/main/resources/forAvac/translatedSpaWikiToRus.txt"));
         AtomicInteger counter = new AtomicInteger();
         map.forEach((key, val) -> {
             counter.getAndIncrement();
             String to = null;
             try {
-                to = Translate.execute((String) val, Language.GERMAN, Language.RUSSIAN);
+                to = Translate.execute((String) val, Language.SPANISH, Language.RUSSIAN);
             } catch (Exception e) {
                 e.printStackTrace();
             }
