@@ -15,15 +15,15 @@ public class StartYandexTranslate {
     public static void main(String[] args) throws IOException {
 
         Translate.setKey(ApiKeys.YANDEX_API_KEY);
-        TreeMap map = FileReader.readFileToMap("./src/main/resources/forAvac/spaWordsWikiArranged.txt");
-        PrintWriter pw = new PrintWriter(new FileWriter("./src/main/resources/forAvac/translatedSpaWikiToRus.txt"));
+        TreeMap map = FileReader.readFileToMap("./src/main/resources/forAvac/deuWordsWikiArranged.txt");
+        PrintWriter pw = new PrintWriter(new FileWriter("./src/main/resources/forAvac/translatedDeu8uy76WikiToRus.txt"));
         final int[] counter = {0};
         map.forEach((Object key, Object val) -> {
             counter[0]++;
             String to = null;
-            if (counter[0] > 109323) {
+            if (counter[0] > 106436) {
                 try {
-                    to = Translate.execute((String) val, Language.SPANISH, Language.RUSSIAN);
+                    to = Translate.execute((String) val, Language.GERMAN, Language.RUSSIAN);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
