@@ -17,10 +17,8 @@ public class FileReader {
             int counter = 0;
             while (sc.hasNextLine()) {
                 String word = sc.nextLine().trim();
-                if (!map.containsValue(word)) {
                     map.put(counter, word);
                     counter++;
-                }
                 if (counter % 1000 == 0) {
                     System.out.println(counter);
                 }
