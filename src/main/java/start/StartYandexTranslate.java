@@ -16,20 +16,22 @@ public class StartYandexTranslate {
     public static void main(String[] args) throws IOException {
 
         Translate.setKey(ApiKeys.YANDEX_API_KEY);
-        TreeMap map = FileReader.readFileToMap("./src/main/resources/packageFromAvac/eng.txt");
-        PrintWriter pw = new PrintWriter(new FileWriter("./src/main/resources/packageToAVAC/translatedEngWikiToSpa.txt"));
+        TreeMap map = FileReader.readFileToMap("./src/main/resources/packageFromAvac/deu.txt");
+        PrintWriter pw = new PrintWriter(new FileWriter("./src/main/resources/packageToAVAC/translatedDeuWikiToEng.txt"));
         AtomicInteger counter = new AtomicInteger();
-        map.forEach((key, val) -> {
-            counter.getAndIncrement();
+        map.forEach( ( Object key, Object val ) -> {
+            int andIncrement = counter.getAndIncrement();
             String to = null;
-            try {
-                to = Translate.execute((String) val, Language.ENGLISH, Language.SPANISH);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            System.out.println(counter + " --> " + val + " = " + to);
-            pw.write(val + ": " + to + "\n");
-            pw.flush();
+            /*if(andIncrement > 38735) {*/
+                try {
+                    to = Translate.execute( ( String )val, Language.GERMAN, Language.ENGLISH );
+                } catch( Exception e ) {
+                    e.printStackTrace();
+                }
+                System.out.println( counter + " --> " + val + " = " + to );
+                pw.write( val + ": " + to + "\n" );
+                pw.flush();
+            /*}*/
         });
 
         pw.close();
